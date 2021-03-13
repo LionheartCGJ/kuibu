@@ -36,14 +36,9 @@ public class InsertSort {
         }
 
         for (int i = 1; i < arr.length; i++) {
-            findRightPosition(arr, i);
+            for (int j = i; j > 0 && arr[j] < arr[j - 1]; j--) {
+                CommonUtil.swap(arr, j, j - 1);
+            }
         }
-    }
-
-    private static void findRightPosition(int[] arr, int current) {
-        for (int i = current; i > 0 && arr[i] < arr[i - 1]; i--) {
-            CommonUtil.swap(arr, i, i - 1);
-        }
-
     }
 }
