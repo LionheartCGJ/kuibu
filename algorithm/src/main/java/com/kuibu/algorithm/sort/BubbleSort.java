@@ -37,7 +37,6 @@ public class BubbleSort {
             return;
         }
 
-
         for (int i = 0; i < arr.length - 1; i++) {
             // 如果某次冒泡的过程中,没有发生未知交互,说明数组已经有序
             boolean hasChange = false;

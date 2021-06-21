@@ -22,7 +22,7 @@ import java.util.Arrays;
 public class RadixSort {
 
     public static void main(String[] args) {
-        int[] arr = CommonUtil.generateRandomIntArr(10, 100);
+        int[] arr = CommonUtil.generateRandomIntArr(30, 100);
 
         CommonUtil.printIntArr(arr);
 
@@ -33,7 +33,6 @@ public class RadixSort {
 
     public static void radixSort(int[] arr) {
         int maxDigit = getMaxDigit(arr);
-
 
         int dev = 1;
         for(int i = 0; i < maxDigit; i++, dev *= 10) {

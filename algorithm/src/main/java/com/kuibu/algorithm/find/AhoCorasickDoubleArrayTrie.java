@@ -710,15 +710,15 @@ public class AhoCorasickDoubleArrayTrie<V> implements Serializable {
         map.put("dgs", "dgs");
         map.put("hhhh", "hhhh");
         map.put("123", "123");
-        map.put("aaa", "aaa");
+        map.put("毛泽东", "毛泽东");
         arrayTrie.build(map);
 
 
         List<Map<String, Object>> resultList = new ArrayList<Map<String, Object>>();
         List<String> images = new ArrayList<String>();
         images.add("改的abc高大上hhhh");
-        images.add("改的aaa高大上123");
-        images.add("改的aaa高大上dgs");
+        images.add("改的毛泽东高大上123");
+        images.add("改的毛泽东高大上dgs");
         int i = 0;
         for (String str : images) {
             Map<String, Object> resultMap = new HashMap<String, Object>();

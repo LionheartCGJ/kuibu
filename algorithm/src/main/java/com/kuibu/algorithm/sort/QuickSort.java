@@ -41,12 +41,15 @@ public class QuickSort {
      * @param tail
      */
     private static void quickSort(int[] arr, int head, int tail) {
-        if (head < tail) {
-            int pivot = partition(arr, head, tail);
-
-            quickSort(arr, head, pivot - 1);
-            quickSort(arr, pivot + 1, tail);
+        if (head >= tail) {
+            return;
         }
+
+        int pivot = partition(arr, head, tail);
+
+        quickSort(arr, head, pivot - 1);
+        quickSort(arr, pivot + 1, tail);
+
     }
 
     /**
@@ -62,23 +65,23 @@ public class QuickSort {
     private static int partition(int[] arr, int head, int tail) {
         int pivotValue = arr[head];
 
-        int low = head;
-        int high = tail;
+        int left = head;
+        int right = tail;
 
-        while (low < high) {
-            while (low < high && pivotValue <= arr[high]) {
-                high--;
+        while (left < right) {
+            while (left < right && pivotValue <= arr[right]) {
+                right--;
             }
-            arr[low] = arr[high];
+            arr[left] = arr[right];
 
-            while (low < high && pivotValue >= arr[low]) {
-                low++;
+            while (left < right && pivotValue >= arr[left]) {
+                left++;
             }
-            arr[high] = arr[low];
+            arr[right] = arr[left];
         }
 
-        arr[low] = pivotValue;
+        arr[left] = pivotValue;
 
-        return low;
+        return left;
     }
 }

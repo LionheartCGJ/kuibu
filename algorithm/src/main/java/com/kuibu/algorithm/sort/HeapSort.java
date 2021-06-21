@@ -32,7 +32,7 @@ public class HeapSort {
      * 堆排序
      */
     private static void heapSort(int[] arr) {
-        // 将待排序的序列构建成一个大顶堆
+        // 将待排序的数组构建成一个大顶堆
         for (int i = arr.length / 2; i >= 0; i--) {
             heapAdjust(arr, i, arr.length);
         }
@@ -60,15 +60,17 @@ public class HeapSort {
             int child = leftChild(father);
 
             // 如果左子树小于右子树，则需要比较右子树和父节点
-            if (child < length - 1 && arr[child] < arr[child + 1]) {
-                child++; // 序号增1，指向右子树
+            if (child + 1 < length && arr[child] < arr[child + 1]) {
+                // 序号增1，指向右子树
+                child++;
             }
 
             // 如果父节点小于孩子结点，则需要交换
             if (fatherValue < arr[child]) {
                 arr[father] = arr[child];
             } else {
-                break; // 大顶堆结构未被破坏，不需要调整
+                // 大顶堆结构未被破坏，不需要调整
+                break;
             }
 
             // 循环判断孩子节点
